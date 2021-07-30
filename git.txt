@@ -1,0 +1,165 @@
+pawar@DESKTOP-O1H73O2 MINGW64 ~
+$ mkdir project_dir
+
+pawar@DESKTOP-O1H73O2 MINGW64 ~
+$ cd project_dir
+
+pawar@DESKTOP-O1H73O2 MINGW64 ~/project_dir
+$ git init
+Initialized empty Git repository in C:/Users/pawar/project_dir/.git/
+
+pawar@DESKTOP-O1H73O2 MINGW64 ~/project_dir (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+pawar@DESKTOP-O1H73O2 MINGW64 ~/project_dir (master)
+$ git add index.html
+
+pawar@DESKTOP-O1H73O2 MINGW64 ~/project_dir (master)
+$ git commit -m "index commiting"
+[master (root-commit) e283f4e] index commiting
+ 1 file changed, 12 insertions(+)
+ create mode 100644 index.html
+
+pawar@DESKTOP-O1H73O2 MINGW64 ~/project_dir (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        info.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+pawar@DESKTOP-O1H73O2 MINGW64 ~/project_dir (master)
+$ vi index.html
+
+pawar@DESKTOP-O1H73O2 MINGW64 ~/project_dir (master)
+$ touch info.txt
+
+pawar@DESKTOP-O1H73O2 MINGW64 ~/project_dir (master)
+$ touch .gitignore
+
+pawar@DESKTOP-O1H73O2 MINGW64 ~/project_dir (master)
+$ vi .gitignore
+
+pawar@DESKTOP-O1H73O2 MINGW64 ~/project_dir (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        info.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+pawar@DESKTOP-O1H73O2 MINGW64 ~/project_dir (master)
+$ git add index.html
+
+pawar@DESKTOP-O1H73O2 MINGW64 ~/project_dir (master)
+$ git commit -m "commiting 2nd time"
+[master 1daa4f9] commiting 2nd time
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+pawar@DESKTOP-O1H73O2 MINGW64 ~/project_dir (master)
+$ git log
+commit 1daa4f9fa3f16dbadfd195d94f51b5ea8c2f0d72 (HEAD -> master)
+Author: yashasvipawar <YASHASVI-SANJAY.PAWAR@CAPGEMINI.COM>
+Date:   Fri Jul 30 09:47:35 2021 +0530
+
+    commiting 2nd time
+
+commit e283f4e53e42df3ebb34cb80ceabef20fcc86c60
+Author: yashasvipawar <YASHASVI-SANJAY.PAWAR@CAPGEMINI.COM>
+Date:   Fri Jul 30 09:18:58 2021 +0530
+
+    index commiting
+
+pawar@DESKTOP-O1H73O2 MINGW64 ~/project_dir (master)
+$ git add index.html
+
+pawar@DESKTOP-O1H73O2 MINGW64 ~/project_dir (master)
+$ git restore --staged index.html
+
+pawar@DESKTOP-O1H73O2 MINGW64 ~/project_dir (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        info.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+pawar@DESKTOP-O1H73O2 MINGW64 ~/project_dir (master)
+$ git config --global alias.my-add add
+
+pawar@DESKTOP-O1H73O2 MINGW64 ~/project_dir (master)
+$ git my-add index.html
+
+pawar@DESKTOP-O1H73O2 MINGW64 ~/project_dir (master)
+$ git commit -m "comiting 3rd time"
+[master dc5d2c2] comiting 3rd time
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+pawar@DESKTOP-O1H73O2 MINGW64 ~/project_dir (master)
+$ git log
+commit dc5d2c261c3d9a885e6dad594ce6ed67ad8cfbc6 (HEAD -> master)
+Author: yashasvipawar <YASHASVI-SANJAY.PAWAR@CAPGEMINI.COM>
+Date:   Fri Jul 30 09:54:05 2021 +0530
+
+    comiting 3rd time
+
+commit 1daa4f9fa3f16dbadfd195d94f51b5ea8c2f0d72
+Author: yashasvipawar <YASHASVI-SANJAY.PAWAR@CAPGEMINI.COM>
+Date:   Fri Jul 30 09:47:35 2021 +0530
+
+    commiting 2nd time
+
+commit e283f4e53e42df3ebb34cb80ceabef20fcc86c60
+Author: yashasvipawar <YASHASVI-SANJAY.PAWAR@CAPGEMINI.COM>
+Date:   Fri Jul 30 09:18:58 2021 +0530
+
+    index commiting
+
+pawar@DESKTOP-O1H73O2 MINGW64 ~/project_dir (master)
+$ git reset --soft HEAD~1
+
+pawar@DESKTOP-O1H73O2 MINGW64 ~/project_dir (master)
+$ git log
+commit 1daa4f9fa3f16dbadfd195d94f51b5ea8c2f0d72 (HEAD -> master)
+Author: yashasvipawar <YASHASVI-SANJAY.PAWAR@CAPGEMINI.COM>
+Date:   Fri Jul 30 09:47:35 2021 +0530
+
+    commiting 2nd time
+
+commit e283f4e53e42df3ebb34cb80ceabef20fcc86c60
+Author: yashasvipawar <YASHASVI-SANJAY.PAWAR@CAPGEMINI.COM>
+Date:   Fri Jul 30 09:18:58 2021 +0530
+
+    index commiting
+
+pawar@DESKTOP-O1H73O2 MINGW64 ~/project_dir (master)
+$
